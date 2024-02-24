@@ -1,0 +1,21 @@
+﻿member_id,name_kanji,name_roman,email,office_name,postal_code,prefecture,address1,address2,tel1,tel2,tel3,status
+1,井村友美,Yumi Imura,watanabe.mikako@example.net,株式会社XXX,1001000,1,AAA市,BBB町,0,0,0,4
+2,山本和紀,Kazunori Yamamoto,shuhei.kijima@example.org,株式会社XXX,1001001,1,AAA市,BBB町,0,0,0,4
+3,橋口肇,Hajime Hashiguchi,soutaro.nakajima@example.net,株式会社XXX,1001002,23,AAA市,BBB町,0,0,0,1
+4,大下豊,Yutaka Ohshita,jnomura@example.net,株式会社XXX,1001003,23,AAA市,BBB町,0,0,0,2
+5,工藤彩,Aya Kudo,vidaka@example.net,株式会社XXX,1001004,4,AAA市,BBB町,0,0,0,4
+6,大森浩之,Hiroyuki Ohmori,nanami86@example.net,株式会社XXX,1001005,32,AAA市,BBB町,0,0,0,4
+7,中山美恵,Yoshie Nakayama,haruka.sasaki@example.net,株式会社XXX,1001006,4,AAA市,BBB町,0,0,0,4
+8,足立隆史,Takashi Adachi,watanabe.yosuke@example.com,株式会社XXX,1001007,3,AAA市,BBB町,0,0,0,4
+9,四宮一輝,Kazuki Shinomiya,sakamoto.asuka@example.com,株式会社XXX,1001008,2,AAA市,BBB町,0,0,0,3
+10,木村麻衣,Mai Kimura,hiroshi87@example.com,株式会社XXX,1001009,3,AAA市,BBB町,0,0,0,4
+11,伊藤浩之,Hiroyuki Ito,osamu60@example.org,株式会社XXX,1001010,4,AAA市,BBB町,0,0,0,4
+12,白石昌広,Masahiro Shiraishi,kenichi31@example.org,株式会社XXX,1001011,3,AAA市,BBB町,0,0,0,3
+13,麻田誠,Makoto Asada,uaoyama@example.com,株式会社XXX,1001012,42,AAA市,BBB町,0,0,0,4
+14,杉山俊次,Shunji Sugiyama,csasaki@example.net,株式会社XXX,1001013,34,AAA市,BBB町,0,0,0,4
+15,鈴木卓,Suguru Suzuki,yoshida.mai@example.org,株式会社XXX,1001014,2,AAA市,BBB町,0,0,0,3
+16,中谷祐樹,Yuki Nakatani,hiroshi62@example.com,株式会社XXX,1001015,3,AAA市,BBB町,0,0,0,4
+17,星野大輔,Daisuke Hoshino,ayamaguchi@example.org,株式会社XXX,1001016,4,AAA市,BBB町,0,0,0,4
+18,柳生翔太,Shota Yagyu,idaka.hideki@example.com,株式会社XXX,1001017,23,AAA市,BBB町,0,0,0,2
+19,園田健介,Kensuke Sonoda,yoshida.atsushi@example.net,株式会社XXX,1001018,34,AAA市,BBB町,0,0,0,4
+20,園田圭介,Keisuke Sonoda,matsumoto.jun@example.org,株式会社XXX,1001019,24,AAA市,BBB町,0,0,0,4

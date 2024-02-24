@@ -1,0 +1,11 @@
+﻿is_private,title,content,image_name,image_path,url,display_order
+0,A協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,1
+1,B協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,2
+0,C協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,3
+1,D協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,4
+0,E協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,5
+1,F協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,6
+0,G協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,7
+1,H協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,8
+0,I協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,9
+1,J協会,会員画面に出てくる紹介文をここに入力します。,example.jpg,path,http://example.com,10

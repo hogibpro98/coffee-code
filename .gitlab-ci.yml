@@ -1,0 +1,78 @@
+image: docker:19-git
+stages:
+  - unittest
+  - stg-build
+  - stg-deploy
+
+variables:
+  STG_IMAGE: registry.coresoft-net.com/audience/proattend/api-back
+
+services:
+  - docker:19-dind
+
+stg-build:
+  stage: stg-build
+  before_script:
+    - export DOCKER_API_VERSION=1.38
+    - docker login -u coresoft -p coresoft registry.coresoft-net.com
+  script:
+    - docker pull $STG_IMAGE:latest || true
+    - docker build --tag $STG_IMAGE:$CI_BUILD_REF --tag $STG_IMAGE:latest -f Dockerfile . --build-arg ENV='stg'
+    - docker push $STG_IMAGE:latest
+  tags:
+    - mac-mini01
+  only:
+    refs:
+      - main
+
+stg-deploy:
+  image: tiangolo/docker-with-compose:latest
+  stage: stg-deploy
+  before_script:
+    - export DOCKER_API_VERSION=1.38
+    - docker login -u coresoft -p coresoft registry.coresoft-net.com
+  script:
+    - docker-compose -f docker-compose.stg.yml pull
+    - docker-compose -f docker-compose.stg.yml up -d
+  tags:
+    - aws-dev01
+  only:
+    refs:
+      - main
+
+unittest:
+  image: php:8.0-apache
+  stage: unittest
+  services:
+    - name: mysql:5.7.34
+      alias: db
+    - name: mailhog/mailhog
+      alias: mailhog
+  variables:
+    MYSQL_ROOT_PASSWORD: p@ssw0rd
+    MYSQL_USER: user
+    MYSQL_PASSWORD: p@ssw0rd
+    MYSQL_DATABASE: test
+  before_script:
+    - apt-get update
+    - apt-get install -y git
+    - apt-get -y autoremove
+    - apt-get install -y curl
+    - apt-get install -y libjpeg-dev libfreetype6-dev libmagickwand-dev libmagick++-dev
+    - apt-get install -y libzip-dev zlib1g-dev libpq-dev mariadb-client unzip libjpeg62-turbo-dev libpng-dev libwebp-dev
+    - apt-get install -y autoconf pkg-config libssl-dev
+    - docker-php-ext-install zip pdo_mysql mysqli
+    - docker-php-ext-enable mysqli
+    - docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
+    - docker-php-ext-install -j$(nproc) gd
+    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+  script:
+    - composer install
+    - php artisan migrate --seed --env=testing
+    - vendor/bin/phpunit -d memory_limit=1024M
+  tags:
+    - mac-mini01
+  only:
+    refs:
+      - main
+
